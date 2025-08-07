@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - THRIFTING</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#10b981', secondary: '#06b6d4' },
+          borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+  <!-- Header -->
+  <header class="bg-teal-400 text-black p-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">T</div>
+      <nav class="flex gap-4">
+        <a href="index.html" class="hover:underline">Pria</a>
+        <a href="index.html" class="hover:underline">Wanita</a>
+        <a href="index.html" class="hover:underline">Anak</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <input type="text" placeholder="Cari produk" class="rounded-full px-4 py-1 w-60 border" />
+      <div class="flex gap-2">
+        <button><i class="ri-user-line"></i></button>
+        <button onclick="window.location.href='cart.html'"><i class="ri-shopping-cart-line"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- JUDULNYA -->
+  <div class="max-w-2xl mx-auto bg-white p-6 my-8 rounded-lg shadow">
+    <!-- Header -->
+    <div class="bg-teal-400 text-white p-3 font-bold text-center rounded-lg">THRIFTING</div>
+
+    <!-- Informasi Alamat -->
+    <div class="bg-gray-100 p-4 my-4 rounded-lg">
+      <p class="font-bold">ETERNALY BRAND <span class="text-gray-500">(085781740727)</span></p>
+      <p class="text-gray-600 mt-1 text-xs">Jalan Danau Batur Raya No 36,<br>Kp. Areman 2 RT 10/RW 07, Kota Depok, Jawa Barat 16457</p>
+    </div>
+
+    <!-- Daftar Produk -->
+    <div id="produkCheckout" class="space-y-3"></div>
+
+    <!-- Rincian Harga Produk -->
+    <div class="my-4 border p-4 rounded-lg">
+      <div id="rincianProduk" class="space-y-1 text-sm"></div>
+      <hr class="my-2" />
+      <div class="flex justify-between font-bold">
+        <span>Total Pembayaran</span>
+        <span id="totalPembayaran" class="text-black">Rp 0</span>
+      </div>
+    </div>
+
+    <!-- Metode Pembayaran -->
+    <div class="bg-gray-100 p-4 my-4 rounded-lg">
+      <h3 class="font-bold mb-2">Metode Pembayaran</h3>
+      <div class="space-y-3 text-sm">
+        <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+          <input type="radio" name="paymentMethod" value="COD" class="accent-primary">
+          <span>COD (Bayar di Tempat)</span>
+        </label>
+        <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+          <input type="radio" name="paymentMethod" value="QRIS" class="accent-primary">
+          <span>QRIS (Via QR Code)</span>
+        </label>
+        <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
+          <input type="radio" name="paymentMethod" value="Transfer" class="accent-primary">
+          <span>Transfer Bank</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Rincian Pembayaran -->
+    <div class="bg-gray-100 p-4 rounded-lg">
+      <h3 class="font-bold mb-2">Rincian Pembayaran</h3>
+      <div class="space-y-1 text-sm">
+        <div class="flex justify-between">
+          <span>Subtotal untuk Produk</span>
+          <span id="subtotalProduk">Rp 0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Subtotal Pengiriman</span>
+          <span id="ongkir">Rp 10.000</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Biaya Pelayanan</span>
+          <span id="biayaLayanan">Rp 5.000</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Voucher Diskon</span>
+          <span id="diskon" class="text-red-500">-Rp 5.000</span>
+        </div>
+      </div>
+      <hr class="my-2" />
+      <div class="flex justify-between font-bold">
+        <span>Total Pembayaran</span>
+        <span id="totalBayar" class="text-black">Rp 0</span>
+      </div>
+    </div>
+
+    <!-- TOMBOL CHECKOUT -->
+    <div class="text-right mt-4">
+      <button id="buatPesanan" class="bg-teal-400 text-white px-5 py-2 text-sm font-semibold hover:bg-teal-500 transition rounded-lg">Buat Pesanan</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-teal-400 text-white p-6 text-sm">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div>
+        <h4 class="font-bold mb-2">BANTUAN</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">FAQ</a></li>
+          <li><a href="#" class="hover:underline">Pembayaran</a></li>
+          <li><a href="#" class="hover:underline">Penukaran & Pengembalian</a></li>
+          <li><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">CUSTOMER</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Voucher</a></li>
+          <li><a href="#" class="hover:underline">Lacak Pemesanan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">PRODUK</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Sale</a></li>
+          <li><a href="#" class="hover:underline">Hoodie</a></li>
+          <li><a href="#" class="hover:underline">Kemeja</a></li>
+          <li><a href="#" class="hover:underline">Celana</a></li>
+          <li><a href="#" class="hover:underline">Aksesoris</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2 text-blue-800">THRIFTING</h4>
+        <p class="italic">Follow kami</p>
+        <div class="flex gap-2 mt-1">
+          <a href="#" class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"><i class="ri-tiktok-line"></i></a>
+        </div>
+        <p class="italic mt-4">Hubungi kami</p>
+        <p>085781740727</p>
+        <p>Thrifting@gmail.co.id</p>
+      </div>
+    </div>
+  </footer>
+
+  <script> 
+    const produkContainer = document.getElementById('produkCheckout');
+    const rincianProduk = document.getElementById('rincianProduk');
+    const subtotalEl = document.getElementById('subtotalProduk');
+    const totalPembayaranEl = document.getElementById('totalPembayaran');
+    const totalBayarEl = document.getElementById('totalBayar');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const ongkir = 10000;
+    const biayaLayanan = 5000;
+    const diskon = 5000;
+
+    async function loadCheckout() {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products');
+        const products = await res.json();
+        let subtotal = 0;
+        //TOTAL//
+        if (cart.length === 0) {
+          produkContainer.innerHTML = '<p class="text-center text-red-500">Keranjang kosong</p>';
+          subtotalEl.textContent = 'Rp 0';
+          totalPembayaranEl.textContent = 'Rp 0';
+          totalBayarEl.textContent = 'Rp 0';
+          return;
+        }
+
+        produkContainer.innerHTML = '';
+        rincianProduk.innerHTML = '';
+        cart.forEach(item => {
+          const product = products.find(p => p.id === item.id);
+          if (product) {
+            const price = Math.floor(product.price * 15000);
+            const totalItem = price * item.qty;
+            subtotal += totalItem;
+
+            const div = document.createElement('div');
+            div.className = 'flex items-center border p-3 gap-4 rounded-lg';
+            div.innerHTML = `
+              <img src="${product.image}" alt="${product.title}" class="w-20 h-20 object-cover rounded" />
+              <div class="flex-1">
+                <h3 class="font-bold">${product.title}</h3>
+                <p class="text-black text-sm">Ukuran: ${item.size}</p>
+                <p class="text-black text-sm">x${item.qty}</p>
+                <p class="text-black font-bold">Rp ${totalItem.toLocaleString('id-ID')}</p>
+              </div>
+            `;
+            produkContainer.appendChild(div);
+
+            const detail = document.createElement('div');
+            detail.className = 'flex justify-between';
+            detail.innerHTML = `<span>${product.title} (Ukuran: ${item.size}) x${item.qty}</span>
+                                <span>Rp ${totalItem.toLocaleString('id-ID')}</span>`;
+            rincianProduk.appendChild(detail);
+          }
+        });
+
+        const totalBayar = subtotal + ongkir + biayaLayanan - diskon;
+        subtotalEl.textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+        totalPembayaranEl.textContent = `Rp ${totalBayar.toLocaleString('id-ID')}`;
+        totalBayarEl.textContent = `Rp ${totalBayar.toLocaleString('id-ID')}`;
+      } catch (error) {
+        console.error('Error loading checkout:', error);
+        produkContainer.innerHTML = '<p class="text-center text-red-500">Gagal memuat data keranjang</p>';
+      }
+    }
+
+    // Validasi dan Simpan Metode Pembayaran
+    function handleCheckout() {
+      const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked');
+      if (!selectedMethod) {
+        alert('Silakan pilih metode pembayaran.');
+        return;
+      }
+      const paymentMethod = selectedMethod.value;
+      localStorage.setItem('paymentMethod', paymentMethod);
+      alert(`Pesanan dibuat dengan metode pembayaran: ${paymentMethod}`);
+      
+      // Kosongkan keranjang setelah pesanan dibuat dan pindah ke halaman home//
+      localStorage.removeItem('cart');
+      window.location.href = 'home.html'; // Redirect ke halaman utama
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCheckout();
+      document.getElementById('buatPesanan').addEventListener('click', handleCheckout);
+    });
+  </script>
+</body>
+</html>

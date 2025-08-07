@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans">
+  <!-- Header -->
+  <header class="bg-teal-400 text-black p-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">T</div>
+      <nav class="flex gap-4">
+        <a href="#" class="hover:underline">Men</a>
+        <a href="#" class="hover:underline">Women</a>
+        <a href="#" class="hover:underline">Child</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <input type="text" placeholder="Search for items" class="rounded-full px-4 py-1 w-60 border" />
+      <div class="flex gap-2">
+        <button>👤</button>
+        <button onclick="window.location.href='cart.html'">🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product -->
+  <section class="px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- Gambar produk -->
+    <div>
+      <img src="..." alt="Shorts" class="w-full rounded" />
+    </div>
+
+    <!-- Product Info -->
+    <div>
+      <h2 class="text-2xl font-bold">Men's levis shorts</h2>
+      <p class="price text-lg text-black mt-2">Rp 150.000 <span class="line-through text-gray-500 text-sm ml-2">Rp 400.000</span></p>
+      <p class="mt-4">Color: <strong>Green Army</strong></p>
+      <div class="flex items-center justify-between mt-2">
+        <p class="font-semibold">Size</p>
+        <a href="#" class="text-sm underline">Size Guide</a>
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="border px-4 py-1">M</button>
+        <button class="border px-4 py-1">S</button>
+        <button class="border px-4 py-1">L</button>
+        <button class="border px-4 py-1">XL</button>
+      </div>
+      <button id="add-to-cart-btn" class="mt-6 w-full bg-gray-900 text-white font-semibold py-2 rounded">
+        Add To Cart
+      </button>
+      <div class="text-center my-4">OR</div>
+      <button id="buy-now-btn" class="w-full bg-teal-400 text-white font-semibold py-2 rounded">Buy Now</button>
+      <div class="mt-6 flex items-start gap-2">
+        <span>🚚</span>
+        <div>
+          <p class="font-semibold">Ship To Home</p>
+          <p class="text-sm">Standard Shipping<br>2-5 Business Days</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gambar -->
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 md:px-20 mt-8"></section>
+
+  <!-- Newsletter -->
+  <div class="bg-teal-400 text-white p-6 text-center">
+    <h3 class="text-lg font-semibold">Daftarkan Email Anda Untuk Mendapatkan Info Dan Penawaran Spesial</h3>
+    <div class="mt-4">
+      <button class="bg-white text-black px-6 py-2 rounded flex items-center justify-center mx-auto gap-2 font-semibold">
+        Sign up for free →
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-teal-400 text-white p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+    <div>
+      <h4 class="font-bold mb-2">BANTUAN</h4>
+      <ul><li>FAQ</li><li>Pembayaran</li><li>Penukaran & Pengembalian</li><li>Kebijakan Privasi</li></ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-2">CUSTOMER</h4>
+      <ul><li>Voucher</li><li>Lacak Pemesanan</li></ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-2">PRODUK</h4>
+      <ul><li>Sale</li><li>Hoodie</li><li>Kemeja</li><li>Celana</li><li>Aksesoris</li></ul>
+    </div>
+    <div>
+      <h4 class="text-xl font-bold mb-2">THRIFTING</h4>
+      <p class="italic">Follow kami</p>
+      <div class="flex gap-2 mt-1">📸 ▶ 🎵</div>
+      <p class="italic mt-4">Hubungi kami</p>
+      <p class="text-sm">085781740727<br>Thrift1ng@gmail.co.id</p>
+    </div>
+  </footer>
+
+  <script>
+    const product = JSON.parse(localStorage.getItem('detail')) || {};
+
+    if (product && product.title) {
+      document.querySelector('h2').textContent = product.title;
+      document.querySelector('img').src = product.image;
+      document.querySelector('img').alt = product.title;
+      document.querySelector('.price').innerHTML =
+        'Rp ' + product.price.toLocaleString('id-ID') +
+        ' <span class="line-through text-gray-500 text-sm ml-2">Rp ' +
+        (product.price * 2).toLocaleString('id-ID') + '</span>';
+    } else {
+      document.querySelector('h2').textContent = 'Produk tidak ditemukan';
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingItem = cart.find(item => item.id === product.id);
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({ id: product.id, qty: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'cart.html';
+    });
+
+    document.getElementById('buy-now-btn').addEventListener('click', () => {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingItem = cart.find(item => item.id === product.id);
+      if (!existingItem) {
+        cart.push({ id: product.id, qty: 1 });
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+      window.location.href = 'checkout.html';
+    });
+  </script>
+</body>
+</html>

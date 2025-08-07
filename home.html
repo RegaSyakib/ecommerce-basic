@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thrifting Store</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10b981',
+            secondary: '#06b6d4'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            'DEFAULT': '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50 pt-16">
+  <!-- Navbar -->
+  <header class="bg-teal-400 text-black p-4 flex items-center justify-between sticky top-0 z-50 shadow-md">
+    <div class="flex items-center gap-4">
+      <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold">T</div>
+      <nav class="flex gap-4">
+        <a href="#" class="hover:underline">Pria</a>
+        <a href="#" class="hover:underline">Wanita</a>
+        <a href="#" class="hover:underline">Anak</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Cari produk"
+        class="rounded-full px-4 py-1 w-60 border focus:outline-none focus:ring-2 focus:ring-primary"
+      />
+      <div class="flex gap-2">
+        <button class="text-xl"><i class="ri-user-line"></i></button>
+        <a href="cart.html" class="text-xl"><i class="ri-shopping-cart-line"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-teal-50 to-green-50 py-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-xl font-bold text-cyan-500 mb-4">Promo Spesial Tahun Baru Imlek</h2>
+        <p class="text-sm font-semibold">Koleksi Baju Anak</p>
+        <h1 class="text-4xl sm:text-4xl md:text-5xl font-bold text-cyan-500 leading-tight">
+          MOCKUP <br> CHILD <br> T-SHIRT
+        </h1>
+        <p class="text-teal-600 font-bold mt-2">DISKON HINGGA</p>
+        <p class="text-yellow-500 text-4xl font-bold">40%</p>
+        <a
+          href="#produk"
+          class="mt-6 inline-block bg-teal-400 text-white px-6 py-2 rounded-lg hover:bg-teal-500 transition"
+        >
+          Lihat Selengkapnya ➜
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="produk" class="py-12 px-4 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-center text-2xl font-bold text-cyan-500 mb-8">Produk Kami</h2>
+      <div id="data-product" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-teal-400 text-white p-6 text-sm">
+    <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div>
+        <h4 class="font-bold mb-2">BANTUAN</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">FAQ</a></li>
+          <li><a href="#" class="hover:underline">Pembayaran</a></li>
+          <li><a href="#" class="hover:underline">Penukaran & Pengembalian</a></li>
+          <li><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">CUSTOMER</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Voucher</a></li>
+          <li><a href="#" class="hover:underline">Lacak Pemesanan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">PRODUK</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Sale</a></li>
+          <li><a href="#" class="hover:underline">Hoodie</a></li>
+          <li><a href="#" class="hover:underline">Kemeja</a></li>
+          <li><a href="#" class="hover:underline">Celana</a></li>
+          <li><a href="#" class="hover:underline">Aksesoris</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2 text-blue-800">THRIFTING</h4>
+        <p class="italic">Follow kami</p>
+        <div class="flex gap-2 mt-1">
+          <a
+            href="#"
+            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"
+          >
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a
+            href="#"
+            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"
+          >
+            <i class="ri-tiktok-line"></i>
+          </a>
+        </div>
+        <p class="italic mt-4">Hubungi kami</p>
+        <p>085781740727</p>
+        <p>Thrifting@gmail.co.id</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * API Service for fetching products and managing cart
+     */
+    const apiService = {
+      async getProducts() {
+        try {
+          const res = await fetch('https://fakestoreapi.com/products');
+          if (!res.ok) throw new Error('Gagal memuat produk');
+          return await res.json();
+        } catch (error) {
+          console.error('Error fetching products:', error);
+          throw error;
+        }
+      },
+
+      async addToCart(productId, quantity, size) {
+        try {
+          const response = await fetch('https://fakestoreapi.com/carts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: 1, products: [{ productId, quantity, size }] })
+          });
+          if (!response.ok) throw new Error('Gagal menambahkan ke keranjang');
+          return await response.json();
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+          throw error;
+        }
+      }
+    };
+
+    /**
+     * Cart Service for local storage management
+     */
+    const cartService = {
+      updateLocalCart(productId, quantity, size) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.id === productId && item.size === size);
+        if (existingItem) {
+          existingItem.qty += quantity;
+        } else {
+          cart.push({ id: productId, qty: quantity, size });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+    };
+
+    /**
+     * UI Service for rendering products and handling UI updates
+     */
+    const uiService = {
+      renderProducts(products) {
+        const productContainer = document.getElementById('data-product');
+        productContainer.innerHTML = '';
+        if (products.length === 0) {
+          productContainer.innerHTML = `<p class="text-center text-red-500 text-lg font-semibold">Tidak ada produk yang cocok</p>`;
+          return;
+        }
+        products.forEach(product => {
+          const price = Math.floor(product.price * 15000);
+          const div = document.createElement('div');
+          div.className = 'bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-200 min-h-[400px]';
+          div.innerHTML = `
+            <div class="relative bg-gray-100">
+              <a href="javascript:void(0)" onclick="selectProduct(${product.id}, '${product.title.replace(/'/g, "\\'")}', '${product.image}', ${price})">
+                <img
+                  src="${product.image}"
+                  alt="${product.title}"
+                  class="w-full h-48 object-contain p-4 hover:scale-105 transition-transform cursor-pointer"
+                  loading="lazy"
+                  onerror="this.src='https://via.placeholder.com/400?text=Image+Not+Found'"
+                />
+              </a>
+            </div>
+            <div class="p-4">
+              <h3 class="font-medium text-lg mb-1 truncate">${product.title}</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400 text-sm">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-half-fill"></i>
+                </div>
+                <span class="ml-1 text-xs text-gray-500">(42)</span>
+              </div>
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <div class="font-bold text-lg">Rp ${price.toLocaleString('id-ID')}</div>
+                <div>
+                  <button
+                    class="bg-teal-400 text-white px-4 py-2 rounded-lg text-sm md:text-base hover:bg-teal-500 transition-colors"
+                    onclick="addToCart(${product.id}, ${price})">
+                    Tambah ke Keranjang
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+          productContainer.appendChild(div);
+        });
+      },
+
+      showError(message) {
+        const productContainer = document.getElementById('data-product');
+        productContainer.innerHTML = `<p class="text-center text-red-500 text-lg font-semibold">${message}</p>`;
+      }
+    };
+
+    /**
+     * Utility: Debounce function to limit function call rate
+     * @param {Function} func - Function to debounce
+     * @param {number} delay - Delay in milliseconds
+     * @returns {Function} Debounced function
+     */
+    function debounce(func, delay) {
+      let timeoutId;
+      return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+      };
+    }
+
+    /**
+     * Store all products
+     */
+    let allProducts = [];
+
+
+    function handleSearch() {
+      const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
+      if (!searchTerm) {
+        uiService.renderProducts(allProducts);
+        return;
+      }
+      const filteredProducts = allProducts.filter(product =>
+        product.title.toLowerCase().includes(searchTerm)
+      );
+      uiService.renderProducts(filteredProducts);
+    }
+
+    async function loadProducts() {
+      try {
+        allProducts = await apiService.getProducts();
+        uiService.renderProducts(allProducts);
+      } catch (error) {
+        uiService.showError('Gagal memuat produk. Silakan coba lagi nanti.');
+      }
+    }
+    function selectProduct(id, title, image, price) {
+      const product = { id, title, image, price };
+      localStorage.setItem('detail', JSON.stringify(product));
+      window.location.href = 'detail.html';
+    }
+    async function addToCart(productId, price) {
+      try {
+        await apiService.addToCart(productId, 1, 'M');
+        cartService.updateLocalCart(productId, 1, 'M');
+        alert('Produk ditambahkan ke keranjang!');
+      } catch (error) {
+        cartService.updateLocalCart(productId, 1, 'M');
+        alert('Produk ditambahkan ke keranjang (lokal).');
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProducts();
+      const searchInput = document.getElementById('search-input');
+      searchInput.addEventListener('input', debounce(handleSearch, 300));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk - THRIFTING</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#10b981', secondary: '#06b6d4' },
+          borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+  <!-- Header -->
+  <header class="bg-teal-400 text-black p-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold">T</div>
+      <nav class="flex gap-4">
+        <a href="index.html" class="hover:underline">Pria</a>
+        <a href="index.html" class="hover:underline">Wanita</a>
+        <a href="index.html" class="hover:underline">Anak</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <input type="text" placeholder="Cari produk" class="rounded-full px-4 py-1 w-60 border focus:outline-none focus:ring-2 focus:ring-primary" />
+      <div class="flex gap-2">
+        <button class="text-xl"><i class="ri-user-line"></i></button>
+        <a href="cart.html" class="text-xl"><i class="ri-shopping-cart-line"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product -->
+  <section class="px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
+    <!-- Gambar produk -->
+    <div class="bg-gray-100 rounded-lg p-4">
+      <img 
+        id="product-image" 
+        src="https://via.placeholder.com/400" 
+        alt="Produk" 
+        class="w-full max-w-md h-80 object-contain rounded-lg shadow-md mx-auto"
+        onerror="this.src='https://via.placeholder.com/400?text=Image+Not+Found'"
+      />
+    </div>
+
+    <!-- Product Info -->
+    <div class="flex flex-col justify-center">
+      <h2 id="product-title" class="text-2xl font-bold">Produk Tidak Ditemukan</h2>
+      <p id="product-price" class="text-lg text-black mt-2">Rp 0 <span class="line-through text-gray-500 text-sm ml-2">Rp 0</span></p>
+      <p class="mt-4">Warna: <strong>Green Army</strong></p>
+      <div class="flex items-center justify-between mt-2">
+        <p class="font-semibold">Ukuran</p>
+      </div>
+
+      <!--UKURAN-->
+      <div class="flex gap-2 mt-2">
+        <button class="border px-4 py-1 size-btn bg-primary text-white">M</button>
+        <button class="border px-4 py-1 size-btn">S</button>
+        <button class="border px-4 py-1 size-btn">L</button>
+        <button class="border px-4 py-1 size-btn">XL</button>
+      </div>
+
+      <!--TAMBAH KE KERANJANG-->
+      <button id="add-to-cart-btn" class="mt-6 w-full bg-gray-900 text-white px-4 py-2 rounded-lg text-sm md:text-base hover:bg-gray-800">Tambah ke Keranjang</button>
+      <div class="text-center my-4">ATAU</div>
+      <button id="buy-now-btn" class="w-full bg-teal-400 text-white px-4 py-2 rounded-lg text-sm md:text-base hover:bg-teal-500">Beli Sekarang</button>
+      <div class="mt-6 flex items-start gap-2">
+        <i class="ri-truck-line text-lg"></i>
+        <div>
+          <p class="font-semibold">Pengiriman ke Rumah</p>
+          <p class="text-sm">Pengiriman Standar<br>2-5 Hari Kerja</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <div class="bg-teal-400 text-white p-6 text-center">
+    <h3 class="text-lg font-semibold">Daftarkan Email Anda Untuk Mendapatkan Info Dan Penawaran Spesial</h3>
+    <div class="mt-4">
+      <a href="./login/register.html"><button class="bg-white text-black px-6 py-2 rounded-lg flex items-center justify-center mx-auto gap-2 font-semibold hover:bg-gray-100">Daftar Gratis →</button></a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-teal-400 text-white p-6 text-sm">
+    <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div>
+        <h4 class="font-bold mb-2">BANTUAN</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">FAQ</a></li>
+          <li><a href="#" class="hover:underline">Pembayaran</a></li>
+          <li><a href="#" class="hover:underline">Penukaran & Pengembalian</a></li>
+          <li><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">CUSTOMER</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Voucher</a></li>
+          <li><a href="#" class="hover:underline">Lacak Pemesanan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">PRODUK</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Sale</a></li>
+          <li><a href="#" class="hover:underline">Hoodie</a></li>
+          <li><a href="#" class="hover:underline">Kemeja</a></li>
+          <li><a href="#" class="hover:underline">Celana</a></li>
+          <li><a href="#" class="hover:underline">Aksesoris</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2 text-blue-800">THRIFTING</h4>
+        <p class="italic">Follow kami</p>
+        <div class="flex gap-2 mt-1">
+          <a href="#" class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"><i class="ri-tiktok-line"></i></a>
+        </div>
+        <p class="italic mt-4">Hubungi kami</p>
+        <p>085781740727</p>
+        <p>Thrifting@gmail.co.id</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // API 
+    const apiService = {
+      async addToCart(productId, quantity, size) {
+        try {
+          const response = await fetch('https://fakestoreapi.com/carts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: 1, products: [{ productId, quantity, size }] })
+          });
+          if (!response.ok) throw new Error('Gagal menambahkan ke keranjang');
+          return await response.json();
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+          alert('Gagal menambahkan ke keranjang. Menggunakan penyimpanan lokal.');
+          return null;
+        }
+      }
+    };
+
+    // keranjang
+    const cartService = {
+      updateLocalCart(productId, quantity, size) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.id === productId && item.size === size);
+        if (existingItem) {
+          existingItem.qty += quantity;
+        } else {
+          cart.push({ id: productId, qty: quantity, size });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+    };
+
+    // Load Product Details
+    function loadProductDetails() {
+      const product = JSON.parse(localStorage.getItem('detail')) || {};
+      if (product && product.title && product.id) {
+        document.getElementById('product-title').textContent = product.title;
+        document.getElementById('product-image').src = product.image;
+        document.getElementById('product-image').alt = product.title;
+        document.getElementById('product-price').innerHTML =
+          'Rp ' + product.price.toLocaleString('id-ID') +
+          ' <span class="line-through text-gray-500 text-sm ml-2">Rp ' +
+          (product.price * 2).toLocaleString('id-ID') + '</span>';
+      } else {
+        document.getElementById('product-title').textContent = 'Produk Tidak Ditemukan';
+        document.getElementById('product-image').src = 'https://via.placeholder.com/400?text=Image+Not+Found';
+        document.getElementById('product-price').innerHTML = 'Rp 0';
+      }
+      return product;
+    }
+
+    // Size Selection
+    let selectedSize = 'M';
+    document.querySelectorAll('.size-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        selectedSize = button.textContent;
+        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('bg-primary', 'text-white'));
+        button.classList.add('bg-primary', 'text-white');
+      });
+    });
+
+    // Event Handlers
+    document.getElementById('add-to-cart-btn').addEventListener('click', async () => {
+      const product = JSON.parse(localStorage.getItem('detail')) || {};
+      if (!product.id) {
+        alert('Produk tidak valid');
+        return;
+      }
+      await apiService.addToCart(product.id, 1, selectedSize);
+      cartService.updateLocalCart(product.id, 1, selectedSize);
+      alert('Produk ditambahkan ke keranjang!');
+      window.location.href = 'cart.html';
+    });
+
+    document.getElementById('buy-now-btn').addEventListener('click', async () => {
+      const product = JSON.parse(localStorage.getItem('detail')) || {};
+      if (!product.id) {
+        alert('Produk tidak valid');
+        return;
+      }
+      await apiService.addToCart(product.id, 1, selectedSize);
+      cartService.updateLocalCart(product.id, 1, selectedSize);
+      alert('Produk ditambahkan ke keranjang!');
+      window.location.href = 'checkout.html';
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProductDetails();
+    });
+  </script>
+</body>
+</html>

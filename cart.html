@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keranjang - THRIFTING</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 text-white font-sans">
+  <div class="max-w-5xl mx-auto mt-10 p-6 bg-gray-200 text-black rounded-xl shadow-lg">
+    <div class="flex justify-between items-center bg-teal-400 text-white rounded-t-xl px-6 py-4">
+      <a href="..." class="hover:underline">HOME</a>
+      <h1 class="text-lg font-bold tracking-wide">THRIFTING</h1>
+    </div>
+
+    <!-- Tabel Produk -->
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-2">
+        <table class="w-full text-sm">
+          <thead class="border-b font-semibold">
+            <tr>
+              <th class="text-left py-2">Produk</th>
+              <th>Harga</th>
+              <th>Kuantitas</th>
+              <th>Total</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <!--untuk menampilkan api ke cart-->
+          <tbody id="cartItems" class="divide-y"></tbody>
+        </table>
+      </div>
+
+      <div class="bg-gradient-to-b from-white to-gray-400 text-black rounded-lg p-4 shadow-lg">
+        <p class="font-bold mb-2">Total:</p>
+        <p id="totalDisplay" class="font-bold text-xl">Rp 0</p>
+        <a href="checkout.html" class="mt-4 block text-center bg-black text-white py-2 rounded hover:bg-gray-700">Beli Sekarang</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartTable = document.getElementById("cartItems");
+    const totalDisplay = document.getElementById("totalDisplay");
+
+    async function fetchProductData() {
+      const response = await fetch("https://fakestoreapi.com/products");
+      const products = await response.json();
+
+      const cartWithDetails = cartData.map(cartItem => {
+        const product = products.find(p => p.id === cartItem.id);
+        return {
+          ...cartItem,
+          title: product?.title || 'Tidak ditemukan',
+          image: product?.image || '',
+          price: Math.floor(product?.price * 15000 || 0),
+        };
+      });
+
+      renderCart(cartWithDetails);
+    }
+
+    function renderCart(items) {
+      cartTable.innerHTML = "";
+      let total = 0;
+
+      if (items.length === 0) {
+        cartTable.innerHTML = '<tr><td colspan="5" class="text-center py-4">Keranjang kosong</td></tr>';
+        totalDisplay.textContent = "Rp 0";
+        return;
+      }
+
+      items.forEach(item => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td class="flex items-center gap-2 py-4">
+            <img src="${item.image}" alt="${item.title}" class="w-16 h-16 object-cover rounded" />
+            <div><p class="font-semibold">${item.title}</p></div>
+          </td>
+          <td class="text-red-500 text-center">Rp ${item.price.toLocaleString("id-ID")}</td>
+          <td class="text-center">
+            <input type="number" value="${item.qty}" min="1" class="w-12 text-center border rounded qty-input" data-id="${item.id}" />
+          </td>
+          <td class="text-red-600 text-center">Rp ${itemTotal.toLocaleString("id-ID")}</td>
+          <td class="text-center">
+            <button class="text-red-600 font-bold delete-btn" data-id="${item.id}">🗑</button>
+          </td>
+        `;
+        cartTable.appendChild(row);
+      });
+
+      totalDisplay.textContent = "Rp " + total.toLocaleString("id-ID");
+      attachEvents();
+    }
+
+    function attachEvents() {
+      document.querySelectorAll(".qty-input").forEach(input => {
+        input.addEventListener("change", (e) => {
+          const id = parseInt(e.target.dataset.id);
+          const qty = parseInt(e.target.value);
+          const index = cartData.findIndex(item => item.id === id);
+          if (index > -1 && qty >= 1) {
+            cartData[index].qty = qty;
+            localStorage.setItem("cart", JSON.stringify(cartData));
+            fetchProductData();
+          }
+        });
+      });
+
+      document.querySelectorAll(".delete-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const id = parseInt(e.target.dataset.id);
+          cartData = cartData.filter(item => item.id !== id);
+          localStorage.setItem("cart", JSON.stringify(cartData));
+          fetchProductData();
+        });
+      });
+    }
+
+    fetchProductData();
+  </script>
+</body>
+</html>

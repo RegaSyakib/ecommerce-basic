@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THRIFTING - Casual Clothing Collection</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#10b981',secondary:'#06b6d4'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+       
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+   <!-- Header -->
+  <header class="bg-teal-400 text-black p-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">T</div>
+      <nav class="flex gap-4">
+        <a href="#" class="hover:underline">Men</a>
+        <a href="#" class="hover:underline">Women</a>
+        <a href="#" class="hover:underline">Child</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <input type="text" placeholder="Search for items" class="rounded-full px-4 py-1 w-60 border" />
+      <div class="flex gap-2">
+        <button>👤</button>
+        <button>🛒</button>
+      </div>
+    </div>
+  </header>
+
+   <!-- Dropdown Menu Placeholder -->
+  <div class="bg-gray-100 p-4 grid grid-cols-4 text-sm">
+    <div>
+      <h4 class="font-bold">New & Trending</h4>
+      <ul><li>Hoodie</li><li>Hoodie</li><li>Hoodie</li></ul>
+    </div>
+    <div>
+      <h4 class="font-bold">Men</h4>
+      <ul><li>Kemeja</li><li>Kaos</li><li>Celana</li></ul>
+    </div>
+    <div>
+      <h4 class="font-bold">Women</h4>
+      <ul><li>Celana</li><li>Celana</li><li>Celana</li></ul>
+    </div>
+    <div>
+      <h4 class="font-bold">Child</h4>
+      <ul><li>Sepatu</li><li>Sepatu</li><li>Sepatu</li></ul>
+    </div>
+  </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-teal-50 to-green-50 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="mb-2 text-sm font-medium text-gray-500">New Destination</div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Feltics <span class="text-primary">Hoodie</span> Collection</h1>
+                    <p class="text-gray-600 mb-6">We've been offering the best level of comfort style, and streetwear to rock for years!</p>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="flex">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600">4.5 - 76 Reviews</span>
+                    </div>
+                    
+                    <a href="./login/register.html"><button class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Shop Now</button></a>
+                    
+                    <div class="flex mt-8 space-x-8">
+                        <div class="text-center">
+                            <div class="font-bold text-xl">75%</div>
+                            <div class="text-sm text-gray-500">Visits Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-xl">85%</div>
+                            <div class="text-sm text-gray-500">Sales Ratio</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-xl">93%</div>
+                            <div class="text-sm text-gray-500">Happy Customers</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="relative bg-white rounded-lg shadow-lg p-4">
+                        <img src="asset/feltic.jpg" class="w-1/2 h-auto mx-auto">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">-25%</div>
+                        <div class="mt-4">
+                            <div class="text-xl font-bold">Get Up to</div>
+                            <div class="flex items-end">
+                                <span class="text-3xl font-bold text-primary">$49.99</span>
+                                <span class="ml-2 text-gray-400 line-through">$65.99</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1">Free shipping</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENJELASAN -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold mb-2">Hey, meet <span class="text-primary">THRIFTING</span></h2>
+                <p class="max-w-3xl mx-auto text-gray-600">
+                    THRIFTING is an Indonesian fashion brand that provides high-quality 
+                    and trendy casual clothing with a modern fashion style. Focusing on 
+                    sustainability and ethical production, we source materials from the 
+                    latest trends and is committed to empowering the local fashion 
+                    industry and creating global products.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="ri-t-shirt-line text-primary text-2xl"></i>
+                    </div>
+                    <div class="font-medium">Clothing</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="ri-gift-line text-primary text-2xl"></i>
+                    </div>
+                    <div class="font-medium">Accessories</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="ri-footprint-line text-primary text-2xl"></i>
+                    </div>
+                    <div class="font-medium">Footwear</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Popular Products</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="asset/hijau.jpg">
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow-sm">
+                            <i class="ri-heart-line text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg mb-1">Classic Black Hoodie</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="ml-1 text-xs text-gray-500">(42)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="font-bold text-lg">$39.99</div>
+                            <button class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-90 transition-colors">
+                                <i class="ri-shopping-bag-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="./asset/hijau.jpg">
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow-sm">
+                            <i class="ri-heart-line text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg mb-1">Feltics Green Hoodie</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <span class="ml-1 text-xs text-gray-500">(76)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="font-bold text-lg">$49.99</div>
+                            <button class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-90 transition-colors">
+                                <i class="ri-shopping-bag-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="asset/hijau.jpg">
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow-sm">
+                            <i class="ri-heart-line text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg mb-1">Urban Gray Hoodie</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="ml-1 text-xs text-gray-500">(31)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="font-bold text-lg">$44.99</div>
+                            <button class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-90 transition-colors">
+                                <i class="ri-shopping-bag-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="asset/hijau.jpg">
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow-sm">
+                            <i class="ri-heart-line text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg mb-1">Feltics Premium Hoodie</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="ml-1 text-xs text-gray-500">(58)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="font-bold text-lg">$49.99</div>
+                            <button class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-90 transition-colors">
+                                <i class="ri-shopping-bag-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Our Style Gallery</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg shadow-sm relative group">
+                    <img src="asset/pria.jpg">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-6 w-full">
+                            <h3 class="text-white text-xl font-bold">MEN</h3>
+                            <button class="mt-2 bg-white text-gray-800 px-4 py-2 rounded-button text-sm font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">Shop Collection</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overflow-hidden rounded-lg shadow-sm relative group">
+                    <img src="asset/pria.jpg">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-6 w-full">
+                            <h3 class="text-white text-xl font-bold">STORES</h3>
+                            <button class="mt-2 bg-white text-gray-800 px-4 py-2 rounded-button text-sm font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">Find Locations</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overflow-hidden rounded-lg shadow-sm relative group">
+                    <img src="asset/pria.jpg">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-6 w-full">
+                            <h3 class="text-white text-xl font-bold">KIDS</h3>
+                            <button class="mt-2 bg-white text-gray-800 px-4 py-2 rounded-button text-sm font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">Shop Collection</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- UNTUK LOGIN -->
+    <section class="py-12 bg-primary bg-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-2">Please create an Account</h2>
+                <p class="text-gray-600 mb-6">Sign up to receive updates about new products and special offers</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center items-center"> 
+                   <a href="./login/register.html"><button class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Sign Up for Free</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-12 pb-6 border-t">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">EXPLORE</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Best Sellers</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Clothing</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Accessories</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">CUSTOMER</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">My Account</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Track Order</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">FAQs</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">PRIVACY</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Sitemap</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">THRIFTING</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-map-pin-line mr-2"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-phone-line mr-2"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-mail-line mr-2"></i>
+                            <span>rega@thrifting.com</span>
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-time-line mr-2"></i>
+                            <span>Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-4 flex space-x-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-tiktok-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-6 border-t border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 THRIFTING. All rights reserved.</p>
+                    
+                    <div class="flex space-x-4">
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-visa-fill text-blue-700 text-2xl"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-mastercard-fill text-orange-500 text-2xl"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-paypal-fill text-blue-600 text-2xl"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-apple-fill text-gray-800 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle favorite toggle
+            const heartIcons = document.querySelectorAll('.ri-heart-line');
+            heartIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    if (this.classList.contains('ri-heart-line')) {
+                        this.classList.remove('ri-heart-line');
+                        this.classList.add('ri-heart-fill');
+                        this.classList.add('text-red-500');
+                    } else {
+                        this.classList.remove('ri-heart-fill');
+                        this.classList.remove('text-red-500');
+                        this.classList.add('ri-heart-line');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

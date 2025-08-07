@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#40cfc8',secondary:'#f5f5f5'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        input:focus {
+            outline: none;
+            border-color: #40cfc8;
+        }
+        .social-icon {
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .register-btn:hover {
+            background-color: rgba(64, 207, 200, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header Navigation -->
+    <header class="w-full bg-primary">
+        <div class="container mx-auto px-4 flex items-center">
+            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-6">
+                <span class="text-xl font-bold">T</span>
+            </div>
+            <nav class="flex space-x-8">
+                <a href="#" class="py-3 font-medium text-black hover:text-white">Men</a>
+                <a href="#" class="py-3 font-medium text-black hover:text-white">Women</a>
+                <a href="#" class="py-3 font-medium text-black hover:text-white">Child</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Registration Form -->
+    <main class="container mx-auto px-4 py-8 max-w-md">
+        <h1 class="text-3xl font-bold text-primary text-center mb-8">REGISTRASI</h1>
+        
+        <form>
+            <div class="mb-6">
+                <label class="block text-primary mb-2">Nama Anda</label>
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" placeholder="First name" class="w-full px-4 py-3 bg-gray-100 rounded border-none" required>
+                    <input type="text" placeholder="Last name" class="w-full px-4 py-3 bg-gray-100 rounded border-none" required>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-primary mb-2">Email</label>
+                <input type="email" placeholder="E-mail address" class="w-full px-4 py-3 bg-gray-100 rounded border-none" required>
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-primary mb-2">Phone Number</label>
+                <input type="tel" class="w-full px-4 py-3 bg-gray-100 rounded border-none" required>
+            </div>
+            
+            <div class="text-center mb-6">
+                <span class="text-gray-600">Already have account?</span>
+                <a href="../login/login.html" class="text-primary ml-1 hover:underline">Login</a>
+            </div>
+            
+            <button type="submit" class="register-btn w-full flex items-center justify-center border border-primary text-black py-3 px-4 rounded-button transition-all duration-300 mb-8 whitespace-nowrap">
+                <a href="../login/login.html"><span class="font-medium mr-2">REGISTRASI</span>
+                <div class="w-5 h-5 flex items-center justify-center">
+                
+                </div>
+            </button>
+        </form>
+        
+        <!-- Social Media Login -->
+        <div class="text-center">
+            <p class="text-gray-500 mb-4">Sign up with others</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+                    <i class="ri-facebook-fill text-black"></i>
+                </a>
+                <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+                    <i class="ri-google-fill text-black"></i>
+                </a>
+                <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+                    <i class="ri-twitter-x-fill text-black"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Form submission logic would go here
+                alert('Form submitted successfully!');
+            });
+        });
+    </script>
+</body>
+</html>

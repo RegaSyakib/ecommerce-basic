@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil - THRIFTING</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .bg-custom-teal {
+      background-color: #48CCC4;
+    }
+    .text-custom-teal {
+      color: #48CCC4;
+    }
+    .hover\:bg-custom-teal-90:hover {
+      background-color: rgba(72, 204, 196, 0.9);
+    }
+    .border-custom-teal {
+      border-color: #48CCC4;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-custom-teal text-white shadow-md sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-lg font-bold tracking-wide">THRIFTING</h1>
+      <nav class="flex space-x-4">
+        <a href="home.html" class="hover:underline">Home</a>
+        <a href="cart.html" class="hover:underline">Cart</a>
+        <a href="profile.html" class="hover:underline font-semibold">Profile</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="max-w-5xl mx-auto mt-10 p-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Profil -->
+      <div class="md:col-span-1 bg-white rounded-lg shadow-lg p-6 text-center">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
+        <h2 class="text-xl font-bold">Nama Pengguna</h2>
+        <p class="text-gray-600">email@contoh.com</p>
+        <button class="mt-4 bg-custom-teal text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-custom-teal-90 transition-colors">
+          Edit Profil
+        </button>
+      </div>
+      <div class="md:col-span-2 space-y-6">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-lg font-semibold mb-4">Pengaturan Akun</h3>
+          <form>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700">Nama</label>
+              <input type="text" placeholder="Nama Pengguna" class="mt-1 w-full border border-custom-teal rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-custom-teal" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" placeholder="email@contoh.com" class="mt-1 w-full border border-custom-teal rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-custom-teal" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700">Kata Sandi</label>
+              <input type="password" placeholder="********" class="mt-1 w-full border border-custom-teal rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-custom-teal" />
+            </div>
+            <button type="submit" class="bg-custom-teal text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-custom-teal-90 transition-colors">
+              Simpan Perubahan
+            </button>
+          </form>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-teal-400 text-white mt-10 py-6">
+    <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div>
+        <h4 class="font-semibold mb-2">BANTUAN</h4>
+        <ul class="space-y-1 text-sm">
+          <li><a href="#" class="hover:underline">FAQ</a></li>
+          <li><a href="#" class="hover:underline">Kebijakan Pengembalian</a></li>
+          <li><a href="#" class="hover:underline">Kontak Kami</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">CUSTOMER</h4>
+        <ul class="space-y-1 text-sm">
+          <li><a href="#" class="hover:underline">Akun Saya</a></li>
+          <li><a href="#" class="hover:underline">Riwayat Pesanan</a></li>
+          <li><a href="#" class="hover:underline">Metode Pembayaran</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">PRODUK</h4>
+        <ul class="space-y-1 text-sm">
+          <li><a href="#" class="hover:underline">Pakaian Pria</a></li>
+          <li><a href="#" class="hover:underline">Pakaian Wanita</a></li>
+          <li><a href="#" class="hover:underline">Aksesoris</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">THRIFTING</h4>
+        <ul class="space-y-1 text-sm">
+          <li><a href="#" class="hover:underline">Tentang Kami</a></li>
+          <li><a href="#" class="hover:underline">Media Sosial</a></li>
+          <li><a href="#" class="hover:underline">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
